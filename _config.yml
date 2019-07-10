@@ -1,4 +1,4 @@
-# Welcome to Jekyll!
+﻿# Welcome to Jekyll!
 #
 # This config file is meant for settings that affect your entire site, values
 # which you are expected to set up once and rarely need to edit after that.
@@ -15,11 +15,12 @@ remote_theme           : "mmistakes/minimal-mistakes"
 minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 # Site Settings
+encoding   		 : UTF-8	
 locale                   : "ko"
-title                    : "KIM KYUNGHEE "
+title                    : "KYUNGHEE BLOG"
 title_separator          : "-"
 name                     : "KIM KYUNGHEE"
-description              : "개인 블로그입니다."
+description              : "공부기록 블로그입니다."
 url                      : "https://kyunghee28.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
@@ -102,10 +103,10 @@ analytics:
 author:
   name             : "김경희"
   avatar           : "/assets/images/myimage.JPG" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "개인블로그입니다."
+  bio              : "공부기록 블로그입니다."
   location         : "경기도"
   email            : "pori4339@gmail.com"
-  uri              : #"https://scholar.google.co.kr/citations?user=eRyqoEcAAAAJ&hl=en"
+  uri              : 
   home             : # null (default), "absolute or relative url to link to author home"
   bitbucket        :
   codepen          :

@@ -1,0 +1,721 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.11.2 by Michael Rose
+  Copyright 2013-2018 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE.txt
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>[기계의 학습법] 학습과 기계 학습의 관계 - KYUNGHEE BLOG</title>
+<meta name="description" content="일반적인 학습과 기계 학습 사이의 관계에 대한 이야기">
+
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko">
+<meta property="og:site_name" content="KYUNGHEE BLOG">
+<meta property="og:title" content="[기계의 학습법] 학습과 기계 학습의 관계">
+<meta property="og:url" content="http://localhost:4000/machine%20learning/machine-learnig-2/">
+
+
+  <meta property="og:description" content="일반적인 학습과 기계 학습 사이의 관계에 대한 이야기">
+
+
+
+  <meta property="og:image" content="http://localhost:4000/assets/images/triangular.jpeg">
+
+
+
+
+
+  <meta property="article:published_time" content="2018-07-11T00:00:00+09:00">
+
+
+
+  <meta property="article:modified_time" content="2018-07-11T00:00:00+09:00">
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/machine%20learning/machine-learnig-2/">
+
+
+
+
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Person",
+      "name": "KIM KYUNGHEE",
+      "url": "http://localhost:4000",
+      "sameAs": null
+    }
+  </script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="KYUNGHEE BLOG Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<!--[if lte IE 9]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    <div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        <a class="site-title" href="/">KYUNGHEE BLOG</a>
+        <ul class="visible-links">
+          
+            
+            <li class="masthead__menu-item">
+              <a href="http://localhost:4000/" >Home</a>
+            </li>
+          
+            
+            <li class="masthead__menu-item">
+              <a href="http://localhost:4000/about/" >About</a>
+            </li>
+          
+            
+            <li class="masthead__menu-item">
+              <a href="http://localhost:4000/categories/" >Posts</a>
+            </li>
+          
+            
+            <li class="masthead__menu-item">
+              <a href="http://localhost:4000/tags/" >Tags</a>
+            </li>
+          
+        </ul>
+        
+        <button class="search__toggle" type="button">
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+          </svg>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+    <div class="initial-content">
+      
+  
+
+
+
+
+
+
+
+
+
+
+
+<div class="page__hero--overlay"
+  style=" background-image: url('/assets/images/triangular.jpeg');"
+>
+  
+    <div class="wrapper">
+      <h1 id="page-title" class="page__title" itemprop="headline">
+        
+          [기계의 학습법] 학습과 기계 학습의 관계
+
+        
+      </h1>
+      
+        <p class="page__lead">About machine and learning
+</p>
+      
+      
+      
+    </div>
+  
+  
+</div>
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="http://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+
+      
+        <img src="/assets/images/myimage.JPG" alt="김경희" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">김경희</h3>
+    
+    
+      <p class="author__bio" itemprop="description">
+        공부기록 블로그입니다.
+      </p>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="http://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">경기도</span>
+        </li>
+      
+
+      
+
+      
+        <li>
+          <a href="mailto:pori4339@gmail.com">
+            <meta itemprop="email" content="pori4339@gmail.com" />
+            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i> 이메일
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://github.com/kyunghee28" itemprop="sameAs">
+            <i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+    <meta itemprop="headline" content="[기계의 학습법] 학습과 기계 학습의 관계">
+    <meta itemprop="description" content="이번 장에서는 기계 학습을 조금 더 파헤쳐본다. 사실 기계 학습이라는 단어를 처음 접했을 때는 마치 “사람이 어떤 기계에 대해서 학습하는 것”을 의미하는 것처럼 보인다. 그러나 실제로는 이와 정반대로 “기계가 학습하는 것”을 의미한다. 아마 원래 영문 용어인 Machine Learning을 직역하는 과정에서 생기는 차이인 것 같다.">
+    <meta itemprop="datePublished" content="July 11, 2018">
+    <meta itemprop="dateModified" content="July 11, 2018">
+
+    <div class="page__inner-wrap">
+      
+
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right ">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On This Page</h4></header>
+              <ul class="toc__menu">
+  <li><a href="#1-학습의-정의">1. 학습의 정의</a></li>
+  <li><a href="#2-인간의-학습과-기계의-학습">2. 인간의 학습과 기계의 학습</a></li>
+</ul>
+            </nav>
+          </aside>
+        
+        <p>이번 장에서는 기계 학습을 조금 더 파헤쳐본다. 사실 기계 학습이라는 단어를 처음 접했을 때는 마치 <strong>“사람이 어떤 기계에 대해서 학습하는 것”</strong>을 의미하는 것처럼 보인다. 그러나 실제로는 이와 정반대로 <strong>“기계가 학습하는 것”</strong>을 의미한다. 아마 원래 영문 용어인 Machine Learning을 직역하는 과정에서 생기는 차이인 것 같다.</p>
+
+<p>단어 자체에서 알 수 있듯이 결국 중요한 포인트는 기계 (Machine)와 학습(Learning)이다. 따라서 그 둘 사이의 관계를 이해하는 것이 무엇보다도 중요한데,  이는 학습의 주체 (누가), 목표 (무엇을), 원천 (어디서)을 아는 것에서 시작한다.</p>
+
+<p>먼저 기계 학습에서 학습의 주체는 명확하다.  바로 기계 혹은 컴퓨터이다.</p>
+
+<p>그렇다면 기계는 무엇을 배우는가? 앞 장에서 기계 학습이 인공 지능 개발의 일부분인 것을 상기해보면, 기계가 배우고자 하는 그것은 바로 인간의 지능, 문제 해결 능력이라고 말할 수 있다. 물론 모든 문제에 대해 해결 할 수 있는 능력이면 좋겠지만 아직까지는 일반화된 문제 해결 능력보다는 특정 문제에 초점을 두고 있다.</p>
+
+<p>마지막으로 배움의 원천 (source),  어디서 혹은 무엇을 통해 배우는 지를 알아야한다. 흔히 우리는 세상을 통해서 배운다고 한다. 그리고 사람은 눈, 귀, 코 등의 감각 기관을 통해 세상을 인지한다. 기계는 센서를 통해 들어오는 신호로 세상을 인지하고, 결국 그 신호란 데이터를 의미한다.</p>
+
+<p>따라서 기계 학습은 <strong>“데이터를 통해서 기계가 문제 해결 능력을 배우는 것”</strong>이 된다.</p>
+
+<h2 id="1-학습의-정의">1. 학습의 정의</h2>
+
+<p>한편 인간에게 있어서 학습 (Learning)이란 무엇일까? 교육학 용어 사전에 나온 학습에 대한 정의를  참고해보면, 학습의 뜻은 다음과 같다.</p>
+
+<blockquote>
+  <p>학습이란 연습이나 경험의 결과 일어나는 행동의 지속적인 변화를 의미하고 다음의 내용을 수반한다.  학습이란</p>
+
+  <p>1) 행동의 변화이고,</p>
+
+  <p>2) 그 변화는 연습, 훈련, 경험에 의한 것에 한하며,</p>
+
+  <p>3) 그 변화는 비교적 영속적이어야한다.</p>
+
+  <p>​															- 교육학 용어사전, 1995, 하우동설</p>
+</blockquote>
+
+<h2 id="2-인간의-학습과-기계의-학습">2. 인간의 학습과 기계의 학습</h2>
+
+<p>그렇다면 추상적으로 보여지는 학습의 정의와 기계 학습은 어떻게 연결되는 것일까? 앞서 기계 학습이란 <strong>“데이터를 통해서 기계가 문제 해결 능력을 배우는 것”</strong>으로 정의했다. 수학적으로 보았을 때, 기계의 문제 해결 능력이란 어떠한 상황이나 그에 대한 정보 $x$가 입력되면 이에 대한 결과 혹은 답으로서 <script type="math/tex">y</script>를 출력하는 하나의 함수 $y=f(x)$라고 이야기 할 수 있다. 결국 기계의 문제 해결 결과로서의 $y$라는 답은 학습의 정의에서 이야기하는 행동과 일맥상통한다. 또한  $y$는 $f(x)$에 의해 정의되기때문에 행동의 변화는 결국 $f(x)$의 변화를 의미한다.</p>
+
+<p>$f(x)$의 변화에 대해서 간단한 1차 함수 $f(x)=ax+b$를 예를 들어 생각해보자. 아래는 $(a,b)$가 각각 $(1,1), (2,1), (1/2,0)$인 경우의 $f(x)$ 그래프로 서로 다른 형태를 갖는 것을 볼 수 있다.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td><img src="/assets/images/fig3.png" alt="alt" /></td>
+    </tr>
+    <tr>
+      <td><em>서로 다른 파라미터를 가진 세가지 함수 그래프.</em></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>$f(x)$의 변화는 $(a,b)$가 다르기 때문이다. 그래프의 형태는 $(a,b)$ 값에 의해 결정되고, 이와 같이 그래프의 형태를 결정하는 값, 파라미터들을 $w$라 하면, 함수 $f(x)$의 표기를 파라미터까지 포함하여 $f(x;w)$ 꼴로 나타낼 수 있고 최종적으로</p>
+
+<ul>
+  <li><strong>행동의 변화란 함수 $f(x;w)$에서 $w$의 변화를 의미한다.</strong></li>
+</ul>
+
+<p>두번째로 이러한 행동의 변화 (즉, $w$의 변화)는 연습, 훈련, 경험에 의한 것에 한하고, 성숙에 의한 변화는 학습으로 간주되지않는다는 것은 무엇을 의미할까? 먼저, 성숙에 의한 변화는 기계가 생물이 아니기때문에 논외로 쳐도 무방 할 것이다. 중요한 것은 연습, 훈련, 경험에 의한 변화라는 것이고, 훈련(연습)과 경험을 나누어 이야기하고자 한다.</p>
+
+<p>먼저 기계학습에서의 경험이란 $w$를 찾는 과정에서 필요한 데이터 $D$를 말한다. 경험 속에서 우리는 어떠한 행동이 정답인지 판단 할 수 있고,  학습은 결국 그 판단을 바탕으로 올바른 $w$를 찾아가는 과정이다. 그러므로 $w$는 주어진 데이터 혹은 경험 $D$에 의해 결정되며 최종적으로 $f(x;w)$는 $f(x;w \mid D)$로 나타낼 수 있다.</p>
+
+<p>다음으로 훈련(연습)이란 $w$를 변화하는 과정과 같다고 본다. 어떤 문제와 그에 관한 경험 혹은 데이터 $D$가 주어지면, 그에 대한 행동은 $f(x;w \mid D)$를 통해 이루어진다. 이 때 주어진 경험 $D$에서는 $w=1$일때 $f(x;w=1 \mid D)$의 결과 (행동)가 옳다면, 기계는 임의의 $w$값에서 훈련을 통해 $w=1$이라는 것을 배워야 한다. 따라서 $D$ 에 기반한 판단을 통해 올바른 $w$를 찾아가는 과정이 기계 학습에서의 훈련이고, 특히 인공 신경망에서는 이러한 훈련이 오류 역전파 (Backpropagation) 알고리즘을 통해 이루어진다.  (오류 역전파에 대한 이야기는 차후에 인공신경망과 함께 살펴볼 것이다.)</p>
+
+<ul>
+  <li><strong>$w$의 변화는 주어진 경험 $D$와 이를 바탕으로 한 훈련 (오류 역전파 알고리즘)을 통해 이루어진다.</strong></li>
+</ul>
+
+<p>마지막으로 변화는 비교적 영속적이어야 한다는 것은 훈련이 아닌, 시간이 지남에 따라서 자동적으로 $w$가 변화하지 않는 다는 것인데, 이는 학습의 주체가 기계이기때문에 메모리에 저장되는 한 학습의 결과로 얻은 $w$ 는 영속적으로 유지될 것이다.</p>
+
+<p>정리해보면 기계 학습이란 데이터 $D$를 통해서 기계가  $f(x;w \mid D)$를 배우는 것이고, 그 과정에서 주어진 데이터 $D$로부터  어떻게 올바른 $w$를 학습하는지가 중요하다. 사람이 공부하는 것도 이와 동일하게 개개인이 겪는 경험 (혹은 문제들), 그리고 그 경험을 통한 올바른 방향으로의 행동 변화 과정이 중요한 것이다.</p>
+
+<p>*(실제로는 배우는 것 뿐만 아니라 배운 것을 수행하는 부분도 포함된다. 1959년 아서 사무엘은 기계 학습에 대해서 “기계가 일일이 코드로 명시하지 않은 동작을 데이터로부터 학습하여 실행할 수 있도록 하는 알고리즘을 개발하는 연구 분야”라고 정의했다. )</p>
+
+        
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <div align="center" style="margin: 1em 0;">
+        <ins class="adsbygoogle"
+             style="display:block; border-bottom: initial;"
+             data-ad-client="ca-pub-9089895411733030"
+             data-ad-format="auto"></ins>
+        </div>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/#%EA%B8%B0%EA%B3%84%ED%95%99%EC%8A%B5" class="page__taxonomy-item" rel="tag">기계학습</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D" class="page__taxonomy-item" rel="tag">머신러닝</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/categories/#machine-learning" class="page__taxonomy-item" rel="tag">Machine Learning</a>
+    
+    </span>
+  </p>
+
+
+        
+          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2018-07-11">July 11, 2018</time></p>
+        
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%5B%EA%B8%B0%EA%B3%84%EC%9D%98+%ED%95%99%EC%8A%B5%EB%B2%95%5D+%ED%95%99%EC%8A%B5%EA%B3%BC+%EA%B8%B0%EA%B3%84+%ED%95%99%EC%8A%B5%EC%9D%98+%EA%B4%80%EA%B3%84%20http%3A%2F%2Flocalhost%3A4000%2Fmachine%2520learning%2Fmachine-learnig-2%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fmachine%2520learning%2Fmachine-learnig-2%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://plus.google.com/share?url=http%3A%2F%2Flocalhost%3A4000%2Fmachine%2520learning%2Fmachine-learnig-2%2F" class="btn btn--google-plus" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Google Plus"><i class="fab fa-fw fa-google-plus" aria-hidden="true"></i><span> Google+</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fmachine%2520learning%2Fmachine-learnig-2%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/jekyll/jekyll-on-windows/" class="pagination--pager" title="[Jekyll] 윈도우에서 지킬 설치 및 블로그 생성하기
+">이전</a>
+    
+    
+      <a href="/item/dyson-comparison/" class="pagination--pager" title="[Itemz] 다이슨 무선청소기 구매를 위한 가이드
+">다음</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">참고</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/jekyll/adsense/" rel="permalink">[Jekyll] GitHub 블로그 애드센스 설치하기
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  1 분 소요
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Jekyll 블로그에 구글 애드센스 설치하기
+
+</p>
+  </article>
+</div>
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/machine%20learning/error/" rel="permalink">[Machine Learning] 예측 모델의 오차 메트릭에 대해서
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  1 분 소요
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Error measurements in forecasting
+
+</p>
+  </article>
+</div>
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/machine%20learning/install-tf/" rel="permalink">[Machine Learning] 윈도우 10 텐서플로우 (GPU) 설치하기
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  1 분 소요
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Tensorflow-GPU installation for Windows 10
+
+</p>
+  </article>
+</div>
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/paper/paper-infovae/" rel="permalink">[논문 정리] InfoVAE
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  5 분 소요
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">InfoVAE : Balancing Learning and Inference in Variational Autoencoder
+
+</p>
+  </article>
+</div>
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <div align="center" style="margin: 1em 0;">
+    <ins class="adsbygoogle"
+         style="display:block; border-bottom: initial;"
+         data-ad-client="ca-pub-9089895411733030"
+         data-ad-format="auto"></ins>
+    </div>
+    <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><input type="text" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+    <div id="results" class="results"></div></div>
+      </div>
+    
+
+    <div class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+    
+    
+    
+      <li><a href="https://github.com/kyunghee28"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+    
+    
+    
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2019 KIM KYUNGHEE. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.<br /><br />
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="크리에이티브 커먼즈 라이선스" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a><br /><br />이 저작물은 <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">크리에이티브 커먼즈 저작자표시-비영리-변경금지 4.0 국제 라이선스</a>에 따라 이용할 수 있습니다. </div>
+
+      </footer>
+    </div>
+
+    
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+
+  <script src="/assets/js/main.min.js"></script>
+  <script src="https://use.fontawesome.com/releases/v5.0.13/js/all.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "http://localhost:4000/machine%20learning/machine-learnig-2/";  // Replace PAGE_URL with your page's canonical URL variable
+      this.page.identifier = "/machine%20learning/machine-learnig-2"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    (function() { // DON'T EDIT BELOW THIS LINE
+      var d = document, s = d.createElement('script');
+      s.src = 'https://kyunhgee28.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+  
+
+
+
+  </body>
+</html>

@@ -1,0 +1,553 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.11.2 by Michael Rose
+  Copyright 2013-2018 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE.txt
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>[Machine Learning] 윈도우 10 텐서플로우 (GPU) 설치하기 - KYUNGHEE BLOG</title>
+<meta name="description" content="윈도우 10에서 텐서플로우 GPU 설치하기">
+
+
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ko">
+<meta property="og:site_name" content="KYUNGHEE BLOG">
+<meta property="og:title" content="[Machine Learning] 윈도우 10 텐서플로우 (GPU) 설치하기">
+<meta property="og:url" content="http://localhost:4000/_posts/2018-12-30-install-tf/">
+
+
+
+
+  <meta property="og:image" content="http://localhost:4000/assets/images/triangular.jpeg">
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/_posts/2018-12-30-install-tf/">
+
+
+
+
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Person",
+      "name": "KIM KYUNGHEE",
+      "url": "http://localhost:4000",
+      "sameAs": null
+    }
+  </script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="KYUNGHEE BLOG Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<!--[if lte IE 9]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    <div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        <a class="site-title" href="/">KYUNGHEE BLOG</a>
+        <ul class="visible-links">
+          
+            
+            <li class="masthead__menu-item">
+              <a href="http://localhost:4000/" >Home</a>
+            </li>
+          
+            
+            <li class="masthead__menu-item">
+              <a href="http://localhost:4000/about/" >About</a>
+            </li>
+          
+            
+            <li class="masthead__menu-item">
+              <a href="http://localhost:4000/categories/" >Posts</a>
+            </li>
+          
+            
+            <li class="masthead__menu-item">
+              <a href="http://localhost:4000/tags/" >Tags</a>
+            </li>
+          
+        </ul>
+        
+        <button class="search__toggle" type="button">
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+          </svg>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+    <div class="initial-content">
+      
+  
+
+
+
+
+
+
+
+
+
+
+
+<div class="page__hero--overlay"
+  style=" background-image: url('/assets/images/triangular.jpeg');"
+>
+  
+    <div class="wrapper">
+      <h1 id="page-title" class="page__title" itemprop="headline">
+        
+          [Machine Learning] 윈도우 10 텐서플로우 (GPU) 설치하기
+
+        
+      </h1>
+      
+        <p class="page__lead">Tensorflow-GPU installation for Windows 10
+</p>
+      
+      
+      
+    </div>
+  
+  
+</div>
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="http://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+
+      
+        <img src="/assets/images/myimage.JPG" alt="김경희" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">김경희</h3>
+    
+    
+      <p class="author__bio" itemprop="description">
+        공부기록 블로그입니다.
+      </p>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="http://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">경기도</span>
+        </li>
+      
+
+      
+
+      
+        <li>
+          <a href="mailto:pori4339@gmail.com">
+            <meta itemprop="email" content="pori4339@gmail.com" />
+            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i> 이메일
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://github.com/kyunghee28" itemprop="sameAs">
+            <i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+    <meta itemprop="headline" content="[Machine Learning] 윈도우 10 텐서플로우 (GPU) 설치하기">
+    
+    
+    <meta itemprop="dateModified" content="December 30, 2018">
+
+    <div class="page__inner-wrap">
+      
+
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right ">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On This Page</h4></header>
+              <ul class="toc__menu">
+  <li><a href="#0-gpu-support">0. GPU support</a></li>
+  <li><a href="#1-anaconda를-통한-텐서플로우-설치">1. Anaconda를 통한 텐서플로우 설치</a></li>
+</ul>
+            </nav>
+          </aside>
+        
+        <h1 id="tensorflow-gpu-installation-for-windows-10">Tensorflow-GPU installation for Windows 10</h1>
+
+<p>최대한 간단하게 정리한 윈도우 10에서 텐서플로우 GPU 설치하기. (2018년 12월 기준)</p>
+
+<ul>
+  <li>GPU가 필요없다면 바로 1번으로…</li>
+</ul>
+
+<h3 id="0-gpu-support">0. GPU support</h3>
+
+<p>GPU를 활용하기 위해서는 먼저 다음을 필요로 한다.</p>
+
+<ul>
+  <li>CUDA 지원 GPU 카드</li>
+  <li>NVIDIA GPU 드라이버 384.x 이상 (for CUDA 9.0)</li>
+  <li>CUDA Toolkit (현재 CUDA 9.0 지원)</li>
+  <li>cuDNN SDK (7.2 이상)</li>
+</ul>
+
+<p>GPU와 드라이버는 미리 설치해두고, 다음을 진행한다.</p>
+
+<ol>
+  <li>아카이브에서 CUDA toolkit 9.0 다운로드 후 설치 (Base installer, patch 1/2/3/4)
+<a href="https://developer.nvidia.com/cuda-90-download-archive"><code class="highlighter-rouge">https://developer.nvidia.com/cuda-90-download-archive</code></a>
+<br /></li>
+  <li>
+    <p>환경 변수에서 CUDA_PATH 확인<br />
+(기본 <code class="highlighter-rouge">C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.0</code>)<br /><br /></p>
+  </li>
+  <li>CUDA toolkit 버전에 맞는 cuDNN 라이브러리 다운로드 및 압축풀기 (v7.4.2 for CUDA 9.0)<br />
+<a href="https://developer.nvidia.com/rdp/cudnn-download"><code class="highlighter-rouge">https://developer.nvidia.com/rdp/cudnn-download</code></a>
+<br /></li>
+  <li>압축 해제 3개의 파일을 앞선 CUDA_PATH 경로 내의 동일한 폴더로 이동</li>
+</ol>
+
+<h3 id="1-anaconda를-통한-텐서플로우-설치">1. Anaconda를 통한 텐서플로우 설치</h3>
+
+<ol>
+  <li>최신 버전의 아나콘다 다운로드 후 설치 (Python 3.7 version)
+<a href="https://www.anaconda.com/download/#windows"><code class="highlighter-rouge">https://www.anaconda.com/download/#windows</code></a>
+<br /></li>
+  <li>Anaconda prompt 실행 후 텐서플로우 구동을 위한 가상 환경 생성 (Python 3.6 버전 지정 필수)
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>conda create -n 환경이름 pip python=3.6
+</code></pre></div>    </div>
+  </li>
+  <li>추가적으로 설치하게될 패키지 목록들이 뜨고 <code class="highlighter-rouge">y</code> 눌러 진행
+<br /></li>
+  <li>생성 완료 후 가상 환경 실행
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>conda activate 환경이름
+</code></pre></div>    </div>
+    <p>가상 환경이 실행되면 <code class="highlighter-rouge">(base) C:\~ </code>가 <code class="highlighter-rouge">(환경이름) C:\~</code>로 변경된다.
+<br /></p>
+  </li>
+  <li>다음의 코드를 차례로 실행 (CPU 버전 설치 시 -gpu를 빼고 실행)
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip install --upgrade pip
+pip install --upgrade tensorflow-gpu
+</code></pre></div>    </div>
+  </li>
+  <li>설치가 끝나면 verification을 위해 다음의 코드를 실행해본다.
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python -c "import tensorflow as tf; tf.enable_eager_execution();  print(tf.reduce_sum(tf.random_normal([1000, 1000])))"
+</code></pre></div>    </div>
+  </li>
+  <li>설치가 정상적으로 완료되었다면 GPU에 대한 정보가 주르륵 출력되고 최종적으로 다음과 같은 결과가 화면에 나타난다.
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tf.Tensor(숫자, shape=(), dtype=float32)
+</code></pre></div>    </div>
+  </li>
+  <li>가상 환경 종료.
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>conda deactivate
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+        
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <div align="center" style="margin: 1em 0;">
+        <ins class="adsbygoogle"
+             style="display:block; border-bottom: initial;"
+             data-ad-client="ca-pub-9089895411733030"
+             data-ad-format="auto"></ins>
+        </div>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/categories/#machine-learning" class="page__taxonomy-item" rel="tag">Machine Learning</a>
+    
+    </span>
+  </p>
+
+
+        
+          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2018-12-30">December 30, 2018</time></p>
+        
+
+      </footer>
+
+      
+
+      
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+    </div>
+
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <div align="center" style="margin: 1em 0;">
+    <ins class="adsbygoogle"
+         style="display:block; border-bottom: initial;"
+         data-ad-client="ca-pub-9089895411733030"
+         data-ad-format="auto"></ins>
+    </div>
+    <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><input type="text" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+    <div id="results" class="results"></div></div>
+      </div>
+    
+
+    <div class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+    
+    
+    
+      <li><a href="https://github.com/kyunghee28"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+    
+    
+    
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2019 KIM KYUNGHEE. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.<br /><br />
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="크리에이티브 커먼즈 라이선스" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a><br /><br />이 저작물은 <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">크리에이티브 커먼즈 저작자표시-비영리-변경금지 4.0 국제 라이선스</a>에 따라 이용할 수 있습니다. </div>
+
+      </footer>
+    </div>
+
+    
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+
+  <script src="/assets/js/main.min.js"></script>
+  <script src="https://use.fontawesome.com/releases/v5.0.13/js/all.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "http://localhost:4000/_posts/2018-12-30-install-tf/";  // Replace PAGE_URL with your page's canonical URL variable
+      this.page.identifier = ""; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    (function() { // DON'T EDIT BELOW THIS LINE
+      var d = document, s = d.createElement('script');
+      s.src = 'https://kyunhgee28.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+  
+
+
+
+  </body>
+</html>
