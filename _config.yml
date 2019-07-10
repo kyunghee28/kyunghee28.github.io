@@ -18,7 +18,7 @@ minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt"
 locale                   : "ko"
 title                    : "KIM KYUNGHEE "
 title_separator          : "-"
-name                     : "S"
+name                     : "KIM KYUNGHEE"
 description              : "개인 블로그입니다."
 url                      : "https://kyunghee28.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
@@ -29,7 +29,7 @@ words_per_minute         : 200
 comments:
   provider               : "disqus" # false (default), "disqus", "discourse", "facebook", "google-plus", "staticman", "staticman_v2" "custom"
   disqus:
-    shortname            : "shryu8902" # https://help.disqus.com/customer/portal/articles/466208-what-s-a-shortname-
+    shortname            : "kyunhgee28" # https://help.disqus.com/customer/portal/articles/466208-what-s-a-shortname-
   discourse:
     server               : # https://meta.discourse.org/t/embedding-discourse-comments-via-javascript/31963 , e.g.: meta.discourse.org
   facebook:
@@ -73,7 +73,7 @@ google:
 google_site_verification :
 bing_site_verification   :
 yandex_site_verification :
-naver_site_verification  : "88f4049b5e09dab33c8f4f9e19efeac2d73da493"
+naver_site_verification  : 
 
 # Social Sharing
 twitter:
@@ -92,10 +92,10 @@ social:
 
 # Analytics
 analytics:
-  provider               : "google" # false (default), "google", "google-universal", "custom"
+  provider               : false # false (default), "google", "google-universal", "custom"
   google:
-    tracking_id          : UA-120931108-1
-    anonymize_ip         : false # true, false (default)
+    tracking_id          :
+    anonymize_ip         : # true, false (default)
 
 
 # Site Author
