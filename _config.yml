@@ -16,7 +16,7 @@ minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt"
 
 # Site Settings
 locale                   : "ko"
-title                    : "kyunghee28"
+title                    : "KIM KYUNGHEE "
 title_separator          : "-"
 name                     : "S"
 description              : "개인 블로그입니다."
@@ -100,7 +100,7 @@ analytics:
 
 # Site Author
 author:
-  name             : "류승형"
+  name             : "김경희"
   avatar           : "/assets/images/new_bio.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "서강대학교 전자공학과 NICE Lab"
   location         : "세종특별자치시"
