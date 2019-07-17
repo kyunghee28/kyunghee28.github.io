@@ -16,7 +16,7 @@ minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt"
 
 # Site Settings
 encoding   		 : UTF-8	
-locale                   : "ko"
+locale                   : "ko-KR"
 title                    : "KYUNGHEE BLOG"
 title_separator          : "-"
 name                     : "KIM KYUNGHEE"
@@ -102,9 +102,9 @@ analytics:
 # Site Author
 author:
   name             : "김경희"
-  avatar           : "/assets/images/myimage.JPG" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "공부기록 블로그입니다."
-  location         : "경기도"
+  location         : "경기도 시흥시"
   email            : "pori4339@gmail.com"
   uri              : 
   home             : # null (default), "absolute or relative url to link to author home"
